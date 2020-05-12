@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class RanorexPage {
+public class SiteRanorexPage {
 
     private WebDriver driver;
 
-    public RanorexPage(WebDriver driver) {
+    public SiteRanorexPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -17,20 +17,20 @@ public class RanorexPage {
     private By CategoryLocator = By.id("Category");
     private By ButtonLocator = By.id("Save");
 
-    public RanorexPage enterFirstName(String firstName) {
+    public SiteRanorexPage enterFirstName(String firstName) {
         WebElement firstNameField = driver.findElement(firstNameLocator);
         return this;
     }
-    public RanorexPage enterLastName (String lastName) {
+    public SiteRanorexPage enterLastName (String lastName) {
         WebElement lastNameField = driver.findElement(lastNameLocator);
         return this;
     }
-    public RanorexPage selectCategory () {
+    public SiteRanorexPage selectCategory () {
         driver.findElement(CategoryLocator).isSelected();
-        return new RanorexPage(driver);
+        return new SiteRanorexPage(driver);
     }
-    public RanorexPage clickSaveButton(){
+    public SiteRanorexPage clickSaveButton(){
         driver.findElement(ButtonLocator).click();
-        return new RanorexPage(driver);
+        return new SiteRanorexPage(driver);
     }
 }
