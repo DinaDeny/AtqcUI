@@ -1,4 +1,4 @@
-package framework;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,12 +25,20 @@ public class SiteRanorexPage {
         WebElement lastNameField = driver.findElement(lastNameLocator);
         return this;
     }
-    public SiteRanorexPage selectCategory () {
-        driver.findElement(CategoryLocator).isSelected();
-        return new SiteRanorexPage(driver);
-    }
+    /*public SiteRanorexPage selectCategory () {
+        driver.findElement(CategoryLocator);
+        SiteRanorexPage siteRanorexPage = selectCategory();
+    }*/
+
+
     public SiteRanorexPage clickSaveButton(){
         driver.findElement(ButtonLocator).click();
         return new SiteRanorexPage(driver);
+    }
+
+    public SiteRanorexPage addUser(String firstName, String lastName){
+        enterFirstName(firstName);
+        enterLastName(lastName);
+        return clickSaveButton();
     }
 }
