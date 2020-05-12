@@ -23,7 +23,7 @@ public class GoogleTest extends BaseTest {
 
         DriverActions.open("https://www.google.com/");
         googlePage = new GooglePage();
-        googlePage.inputSearchParameters("fff");
+        googlePage.inputSearchParameters("Vacation");
 
     }
 

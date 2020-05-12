@@ -1,16 +1,18 @@
-package framework;
+package com.atqc.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.SiteRanorexPage;
 
 import java.util.concurrent.TimeUnit;
 
-public class AppTest {
+
+public class SiteRanorexTest {
     private WebDriver driver;
 
     @BeforeClass
@@ -27,13 +29,10 @@ public class AppTest {
         siteRanorexPage.addUser("Ross", "Geller");
     }
 
-    @Test()
-    public void myTest2() {
-
-        SiteRanorexPage siteRanorexPage = new SiteRanorexPage(driver);
-        siteRanorexPage.addUser("Ross", "Geller");
+    @DataProvider(name = "addUsersInfo")
+    public Object[][] dataProviderMethod() {
+        return new Object[][] { { "Ross", "Geller123" }, { "Monica", "Geller123" } };
     }
-
 
     @AfterClass
     public void tearDown() {
