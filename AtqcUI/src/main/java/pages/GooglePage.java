@@ -20,7 +20,6 @@ public class GooglePage extends BasePage {
         searchField.sendKeys(searchParams);
         log.info("Search parameters was entered");
     }
-
     @FindBy(id = "FirstName")
     private WebElement firstNameField;
 
@@ -38,5 +37,15 @@ public class GooglePage extends BasePage {
         lastNameField.sendKeys(lastNameParams);
         log.info("Last Name parameters was entered");
     }
+
+    @FindBy (id = "Category")
+    private WebElement Category;
+
+    @Step ("Select Category")
+    public void selectCategoryParameters(String categoryParams){
+        selectCategoryParameters("Politics");
+        log.info("Category parameters was selected");
+    }
+
 }
 

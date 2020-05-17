@@ -7,28 +7,28 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.GooglePage;
 
-public class SiteRanorexTest1 {
-
     @Epic("Add First and Last Name")
     @Feature("Ranorex Test with First and Last Name ")
     @Listeners(AllureListener.class)
-    public class SiteRanorexTest extends BaseTest {
+    public class SiteRanorexTest1 extends BaseTest {
 
-        GooglePage newSitePage;
+    GooglePage newSitePage;
 
         @Test
         @Story("STORY-02")
         @TmsLink("00002")
         @Description("Test for entering First and Last name")
         @Issue("JIRA-2")
-        public void openGooglePage() {
+
+        public void openNewSitePage() {
 
             DriverActions.open("https://www.ranorex.com/web-testing-examples/vip/");
             newSitePage = new GooglePage();
             newSitePage.inputFirstNameParameters("Ross");
             newSitePage.inputLastNameParameters("Geller");
+            newSitePage.selectCategoryParameters("Politics");
 
         }
 
     }
-}
+

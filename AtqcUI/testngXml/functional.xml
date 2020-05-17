@@ -6,4 +6,9 @@
             <class name="com.atqc.tests.GoogleTest"/>
         </classes>
     </test>
+    <test name="AddUser">
+        <classes>
+            <class name="com.atqc.tests.SiteRanorexTest"/>
+        </classes>
+    </test>
 </suite>
